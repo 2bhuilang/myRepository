@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1190.0" snapToPixel="true" xmlns:fx="http://javafx.com/fxml/1" 
+xmlns="http://javafx.com/javafx/2.2" fx:controller="com.greatcattle.controllers.main.MainController">
+  <children>
+    <MenuBar fx:id="menuBar" blendMode="SRC_OVER" layoutX="0.0" layoutY="0.0" maxHeight="-1.0" maxWidth="-1.0" prefWidth="-1.0" scaleZ="1.0" translateZ="0.0">
+      <menus>
+        <Menu mnemonicParsing="false" text="文件">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#closeAction" text="关闭" fx:id="window_close" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="编辑" fx:id="editMenu">
+          <items>
+            <MenuItem mnemonicParsing="false" text="删除" />
+            <MenuItem mnemonicParsing="false" text="删除" />
+            <MenuItem mnemonicParsing="false" text="删除" />
+            <MenuItem mnemonicParsing="false" text="删除" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="test">
+          <items>
+            <MenuItem mnemonicParsing="false" text="关于" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <BorderPane fx:id="quickShortPane" layoutX="0.0" layoutY="24.0" style="margin-top: 100px; min-height: 500px;width:100%;hight:100%">
+      <bottom>
+        <ScrollPane prefHeight="116.0" style="width:100%">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="32.0" style="width:100%">
+              <Label />
+            </AnchorPane>
+          </content>
+        </ScrollPane>
+      </bottom>
+      <center>
+        <ScrollPane prefHeight="500.0" style="width:80%">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="432.0" style="width:100%">
+              <Label />
+            </AnchorPane>
+          </content>
+        </ScrollPane>
+      </center>
+      <top>
+        <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" style="width:100%">
+          <children>
+            <Button graphicTextGap="2.0" mnemonicParsing="false" prefHeight="70.0" text="切换用户" textAlignment="LEFT" />
+            <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="Button1" />
+            <Separator orientation="VERTICAL" prefHeight="70.0" />
+            <Button mnemonicParsing="false" onAction="#addMenu" prefHeight="70.0" prefWidth="70.0" text="增加菜单" />
+            <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="Button1" />
+            <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="Button2" />
+            <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="Button3" />
+            <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="Button4" />
+            <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="Button5" />
+          </children>
+        </HBox>
+      </top>
+    </BorderPane>
+  </children>
+</AnchorPane>
