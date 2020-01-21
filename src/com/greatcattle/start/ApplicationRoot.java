@@ -6,6 +6,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * 应用程序入口
+ * @author zhang.xian
+ *
+ */
 public class ApplicationRoot  extends Application{
 	public static void main(String[] args) {
 		launch(args);
