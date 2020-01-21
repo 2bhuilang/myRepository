@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 
-<borderPane fx:id="rootPane" minHeight="600.0"
-	minWidth="800.0" prefHeight="400.0" prefWidth="600.0"
-	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="com.greatcattle.controllers.main.WorkspaceController">
-	<children>
-		<Pane fx:id="containerPane" prefHeight="594.0"
-			prefWidth="868.0" AnchorPane.bottomAnchor="0.0"
-			AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-			AnchorPane.topAnchor="0.0" /> 
-	</children>
-</borderPane> 
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1190.0" snapToPixel="true" 
+stylesheets="com/greatcattle/view/css/base/app.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.greatcattle.controllers.main.WorkspaceController">
+  <children>
+    <SplitPane dividerPositions="0.80" focusTraversable="true" layoutX="14.0" layoutY="41.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="569.0">
+      <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="157.0" prefWidth="503.0" />
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+      </items>
+    </SplitPane>
+  </children>
+</AnchorPane>
