@@ -30,14 +30,14 @@ public class MainController  implements Initializable {
     private MenuBar menuBar;
     
     @FXML
-    private BorderPane quickShortPane;
+    private BorderPane workSpacePane;
  
     @Override
     public void initialize(URL location, ResourceBundle resources) { 
     	
-        menuBar.prefWidthProperty().bind(pane.widthProperty());//宽度绑定为Pane宽度 ss1234
-        quickShortPane.prefWidthProperty().bind( pane.widthProperty());  
-        quickShortPane.setPrefHeight(pane.getPrefHeight()-menuBar.getPrefHeight() );
+        menuBar.prefWidthProperty().bind(pane.widthProperty());//宽度绑定为Pane宽度 ss
+        workSpacePane.prefWidthProperty().bind( pane.widthProperty());  
+        workSpacePane.prefHeightProperty().bind( pane.heightProperty());
        
     }
     
