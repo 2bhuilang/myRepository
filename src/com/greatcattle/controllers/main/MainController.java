@@ -4,6 +4,8 @@ import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+import com.greatcattle.freamwork.ContextApplication;
+
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -34,6 +36,8 @@ public class MainController  implements Initializable {
  
     @Override
     public void initialize(URL location, ResourceBundle resources) { 
+    	
+    	ContextApplication.initCtx();
     	
         menuBar.prefWidthProperty().bind(pane.widthProperty());//宽度绑定为Pane宽度 ss
         workSpacePane.prefWidthProperty().bind( pane.widthProperty());  
