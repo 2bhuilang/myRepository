@@ -67,7 +67,7 @@ stylesheets="com/greatcattle/view/css/base/app.css"
 		            <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="Button1" />
 		            <Separator orientation="VERTICAL" prefHeight="70.0" />
 		            <Button mnemonicParsing="false" onAction="#addMenu" prefHeight="70.0" prefWidth="70.0" text="增加菜单" />
-		            <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="Button1" />
+		            <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" onAction="#openWorkFlow" text="测试打开窗口" />
 		            <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="Button2" />
 		            <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="Button3" />
 		            <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="Button4" />

@@ -1,10 +1,25 @@
 package com.greatcattle.dataservice.util;
 
+import com.greatcattle.dataservice.service.DBService;
+import com.greatcattle.dataservice.service.impl.DbServiceImpl;
+import com.greatcattle.freamwork.utils.SpringUtils;
+
 /**
- * Êı¾İ¿âdbÒµÎñ¹¤¾ß¶ÔÏó
+ * 
  * @author zhang.xian
  *
  */
 public class DBUtils {
+	/**
+	 * é€»è¾‘æŒ‡å®šæ•°æ®æº
+	 * @param dbCode
+	 * @return
+	 */
+	public static DBService getDBService(){
+		 
+		return SpringUtils.getBean(DbServiceImpl.class); 
+		
+		
+	}
 	
 }

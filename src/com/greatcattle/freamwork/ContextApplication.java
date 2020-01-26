@@ -14,7 +14,9 @@ public class ContextApplication {
 	
 	private static ApplicationContext appContext = null;
 	public static synchronized void  initCtx() {
-		  
+		if(true) {
+			return;
+		}
 		if(appContext!=null) {
 			return;
 		}

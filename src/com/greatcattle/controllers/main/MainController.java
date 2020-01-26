@@ -11,6 +11,7 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
@@ -18,6 +19,10 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 /**
  * zhu kong
@@ -39,7 +44,7 @@ public class MainController  implements Initializable {
     	
     	ContextApplication.initCtx();
     	
-        menuBar.prefWidthProperty().bind(pane.widthProperty());//¿í¶È°ó¶¨ÎªPane¿í¶È ss
+        menuBar.prefWidthProperty().bind(pane.widthProperty());//ï¿½ï¿½È°ï¿½ÎªPaneï¿½ï¿½ï¿½ ss
         workSpacePane.prefWidthProperty().bind( pane.widthProperty());  
         workSpacePane.prefHeightProperty().bind( pane.heightProperty());
        
@@ -60,14 +65,27 @@ public class MainController  implements Initializable {
     	this.menuBar.getMenus().get(1).getItems().add( item); 
     }
     
+    @FXML 
+    private void openWorkFlow(ActionEvent event){
+    	 Stage dialog = new Stage() ; 
+    	 dialog.initModality(Modality.WINDOW_MODAL); 
+    	 
+    	 //dialog.initOwner(primaryStage); 
+    	 VBox dialogVbox = new VBox(20); 
+    	 dialogVbox.getChildren().add( new Text("This is a Dialog")); 
+    	 Scene dialogScene = new Scene(dialogVbox,300,200); 
+    	 dialog.setScene(dialogScene); 
+    	 dialog.show();  
+    	 
+    }
+    
     
     @FXML 
-    private void closeAction(ActionEvent event){//º¯ÊýÃû±ØÐèÓëfxmlÖÐµÄÒ»ÖÂ System.out.println("invoke close menu action");
+    private void closeAction(ActionEvent event){//
     	 System.out.println("invoke close menu action");
     	 Alert alert = new Alert(AlertType.CONFIRMATION);
-    	 alert.setTitle("ÊÇ·ñÈ·ÈÏ");
-    	 //alert.setHeaderText("ÊÇ·ñÈ·ÈÏ");
-    	 alert.setContentText("ÊÇ·ñÈ·ÈÏÍË³öÏµÍ³"); 
+    	 alert.setTitle("ç¡®è®¤å…³é—­"); 
+    	 alert.setContentText("ç¡®è®¤å…³é—­"); 
     	 Optional<ButtonType> result = alert.showAndWait();
     	  
     	 System.out.println(result.get().getButtonData().getTypeCode());

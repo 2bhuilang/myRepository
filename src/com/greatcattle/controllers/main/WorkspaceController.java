@@ -32,6 +32,6 @@ public class WorkspaceController implements Initializable {
 		}
 
 		containerPane.getChildren().addAll(pane);
-
+	
 	}
 }
