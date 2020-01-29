@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+import com.greatcattle.controllers.utils.UiUtil;
 import com.greatcattle.freamwork.ContextApplication;
 
 import javafx.event.ActionEvent;
@@ -11,18 +12,15 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
 /**
  * zhu kong
@@ -38,6 +36,9 @@ public class MainController  implements Initializable {
     
     @FXML
     private BorderPane workSpacePane;
+    
+    @FXML
+    private AnchorPane workCenterPane;
  
     @Override
     public void initialize(URL location, ResourceBundle resources) { 
@@ -47,7 +48,19 @@ public class MainController  implements Initializable {
         menuBar.prefWidthProperty().bind(pane.widthProperty());//��Ȱ�ΪPane��� ss
         workSpacePane.prefWidthProperty().bind( pane.widthProperty());  
         workSpacePane.prefHeightProperty().bind( pane.heightProperty());
+        this.initWorkspace();
        
+    }
+    
+    /**
+     * 初始化工作区
+     */
+    private  void initWorkspace() {
+    	
+    	Pane viewRoot = (Pane)UiUtil.loadView("com/greatcattle/view/main/workspace.fxml");
+    	workCenterPane.getChildren().add(viewRoot); 
+		viewRoot.prefWidthProperty().bind( workCenterPane.widthProperty() );
+		viewRoot.prefHeightProperty().bind( workCenterPane.heightProperty() );
     }
     
     @FXML 
@@ -67,15 +80,22 @@ public class MainController  implements Initializable {
     
     @FXML 
     private void openWorkFlow(ActionEvent event){
-    	 Stage dialog = new Stage() ; 
-    	 dialog.initModality(Modality.WINDOW_MODAL); 
-    	 
-    	 //dialog.initOwner(primaryStage); 
-    	 VBox dialogVbox = new VBox(20); 
-    	 dialogVbox.getChildren().add( new Text("This is a Dialog")); 
-    	 Scene dialogScene = new Scene(dialogVbox,300,200); 
-    	 dialog.setScene(dialogScene); 
-    	 dialog.show();  
+		/*
+		 * Stage stage=new Stage(); InnerDynContanner con =
+		 * InnerViewFactory.createInnnerCon(stage); workCenterPane.getChildren().add(
+		 * con.getRoot());
+		 */
+    	
+		 
+    	
+		/*
+		 * Stage dialog = new Stage() ; dialog.initModality(Modality.WINDOW_MODAL);
+		 * 
+		 * //dialog.initOwner(primaryStage); VBox dialogVbox = new VBox(20);
+		 * dialogVbox.getChildren().add( new Text("This is a Dialog")); Scene
+		 * dialogScene = new Scene(dialogVbox,300,200); dialog.setScene(dialogScene);
+		 * dialog.show();
+		 */
     	 
     }
     

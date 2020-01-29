@@ -25,13 +25,16 @@ stylesheets="com/greatcattle/view/css/base/app.css"
       <center>
         <ScrollPane style="width:80%">
           <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="432.0" style="width:100%;" >
-              
-              
+            <AnchorPane  fx:id="workCenterPane"  minHeight="0.0" minWidth="0.0" prefHeight="432.0" style="width:100%;" >
+              <children> 
+              </children> 
             </AnchorPane>
           </content>
         </ScrollPane>
       </center>
+      <right>
+      
+      </right>
       <top>
 	      <BorderPane layoutX="0.0" layoutY="0" style="margin-top: 100px; min-height: 500px;width:100%;hight:100%">
 	      	<top>

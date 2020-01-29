@@ -5,15 +5,67 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.*?>
+<!--stylesheets="com/greatcattle/view/css/base/app.css"   -->
 
-<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1190.0" snapToPixel="true" 
-stylesheets="com/greatcattle/view/css/base/app.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.greatcattle.controllers.main.WorkspaceController">
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" snapToPixel="true" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.greatcattle.controllers.main.WorkspaceController">
   <children>
-    <SplitPane dividerPositions="0.80" focusTraversable="true" layoutX="14.0" layoutY="41.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="569.0">
-      <items>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="157.0" prefWidth="503.0" />
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
-      </items>
-    </SplitPane>
+    <VBox layoutX="20.0" layoutY="10.0" prefHeight="100.0" prefWidth="480.0">
+      <children>
+        <HBox prefHeight="80.0" prefWidth="480.0">
+          <children>
+            <Label prefHeight="80.0" prefWidth="480.0" text="1800kg" />
+          </children>
+        </HBox>
+        <HBox prefHeight="21.0" prefWidth="362.0">
+          <children>
+            <Label prefWidth="79.0" text="车号" />
+            <TextField prefWidth="205.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="21.0" prefWidth="362.0">
+          <children>
+            <Label prefWidth="79.0" text="轴数" />
+            <TextField prefWidth="205.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="21.0" prefWidth="362.0">
+          <children>
+            <Label prefWidth="79.0" text="超载标准" />
+            <TextField prefWidth="205.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="21.0" prefWidth="362.0">
+          <children>
+            <Label prefWidth="79.0" text="重量" />
+            <TextField prefWidth="205.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="21.0" prefWidth="362.0">
+          <children>
+            <Label prefWidth="79.0" text="超载比例" />
+            <TextField prefWidth="205.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="21.0" prefWidth="362.0">
+          <children>
+            <Pane prefHeight="200.0" prefWidth="386.0">
+              <children>
+                <TableView layoutX="0.0" layoutY="30.0" prefHeight="200.0" prefWidth="449.0">
+                  <columns>
+                    <TableColumn prefWidth="75.0" text="流水号" />
+                    <TableColumn prefWidth="75.0" text="车号" />
+                    <TableColumn prefWidth="75.0" text="轴数" />
+                    <TableColumn prefWidth="75.0" text="重量" />
+                    <TableColumn prefWidth="75.0" text="超载标准" />
+                    <TableColumn prefWidth="75.0" text="超载比例" />
+                  </columns>
+                </TableView>
+              </children>
+            </Pane>
+          </children>
+        </HBox>
+      </children>
+    </VBox>
   </children>
 </AnchorPane>
