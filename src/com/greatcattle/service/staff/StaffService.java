@@ -8,6 +8,7 @@ import com.greatcattle.business.bo.StaffBO;
 import com.greatcattle.dto.view.LogInVO;
 import com.greatcattle.dto.vo.StaffInfoVO;
 import com.greatcattle.freamwork.utils.SpringUtils;
+import com.greatcattle.utils.StrTools;
 
 
 @Service
@@ -23,6 +24,11 @@ public class StaffService {
 	public Map login(LogInVO loginVo) {
 		StaffBO staffBo = SpringUtils.getBean(StaffBO.class);
 		StaffInfoVO staffInfoVo = staffBo.getStaffInfo(loginVo.getStaffCode());
+		
+		if(StrTools.isEqual(staffInfoVo.getPassWord(), loginVo.getPassword())) {
+			throw new RuntimeException("密码验证失败");
+		}
+		
 		return null;
 	}
 	
