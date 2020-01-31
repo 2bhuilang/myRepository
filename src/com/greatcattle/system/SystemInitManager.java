@@ -1,6 +1,6 @@
 package com.greatcattle.system;
 
-import com.greatcattle.freamwork.ContextApplication;
+import com.greatcattle.framework.ContextApplication;
 import com.greatcattle.system.ctx.AppSysContext;
 import com.greatcattle.system.ctx.vo.HostInfo;
 

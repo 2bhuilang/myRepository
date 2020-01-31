@@ -1,4 +1,4 @@
-package com.greatcattle.freamwork.log;
+package com.greatcattle.framework.log;
 
 /**
  * 应用面板日志输出

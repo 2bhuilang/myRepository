@@ -1,9 +1,9 @@
-package com.greatcattle.freamwork;
+package com.greatcattle.framework;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.greatcattle.freamwork.utils.SpringUtils;
+import com.greatcattle.framework.utils.SpringUtils;
 
 /**
  * spring上下文初始化

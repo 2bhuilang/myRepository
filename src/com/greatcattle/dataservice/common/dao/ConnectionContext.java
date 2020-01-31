@@ -21,7 +21,7 @@ import org.springframework.jdbc.datasource.DataSourceUtils;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 
 import com.greatcattle.dataservice.common.util.JNDINames;
-import com.greatcattle.freamwork.utils.SpringUtils;
+import com.greatcattle.framework.utils.SpringUtils;
 
 
 /**  

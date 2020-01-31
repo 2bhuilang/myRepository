@@ -1,4 +1,4 @@
-package com.greatcattle.freamwork.log;
+package com.greatcattle.framework.log;
 
 import javafx.scene.Node;
 

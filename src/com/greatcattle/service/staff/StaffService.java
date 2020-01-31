@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import com.greatcattle.business.bo.StaffBO;
 import com.greatcattle.dto.view.LogInVO;
 import com.greatcattle.dto.vo.StaffInfoVO;
-import com.greatcattle.freamwork.utils.SpringUtils;
+import com.greatcattle.framework.utils.SpringUtils;
 import com.greatcattle.system.ctx.AppSysContext;
 import com.greatcattle.system.ctx.ContextFactory;
 import com.greatcattle.system.ctx.UserContext;

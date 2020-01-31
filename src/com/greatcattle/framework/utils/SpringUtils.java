@@ -1,4 +1,4 @@
-package com.greatcattle.freamwork.utils;
+package com.greatcattle.framework.utils;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
@@ -17,7 +17,7 @@ public class SpringUtils {
 	private static ApplicationContext applicationContext;
 	
 	/**
-	 * ÉèÖÃÉÏÏÂÎÄ
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @param applicationContext
 	 * @throws BeansException
 	 */ 
@@ -26,7 +26,7 @@ public class SpringUtils {
 	}
 	
 	/**
-	 * ·µ»ØÉÏÏÂÎÄ
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @param <T>
 	 * @return
 	 */
@@ -36,7 +36,7 @@ public class SpringUtils {
 	}
 	
 	/**
-	 * ¸ù¾ÝbeanµÄname·µ»ØbeanÊµÀý
+	 * ï¿½ï¿½ï¿½ï¿½beanï¿½ï¿½nameï¿½ï¿½ï¿½ï¿½beanÊµï¿½ï¿½
 	 * @param <T>
 	 * @param name
 	 * @return
@@ -48,7 +48,7 @@ public class SpringUtils {
 	}
 	
 	/**
-	 * ¸ù¾ÝbeanµÄname·µ»ØbeanÊµÀý
+	 * ï¿½ï¿½ï¿½ï¿½beanï¿½ï¿½nameï¿½ï¿½ï¿½ï¿½beanÊµï¿½ï¿½
 	 * @param <T>
 	 * @param name
 	 * @return
@@ -61,7 +61,7 @@ public class SpringUtils {
 	}
 	
 	/**
-	 * ¸ù¾ÝbeanµÄnameºÍclassÀàÐÍ·µ»ØbeanÊµÀý
+	 * ï¿½ï¿½ï¿½ï¿½beanï¿½ï¿½nameï¿½ï¿½classï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½beanÊµï¿½ï¿½
 	 * @param <T>
 	 * @param name
 	 * @param requiredType
@@ -73,7 +73,7 @@ public class SpringUtils {
 	}
 	
 	/**
-	 * ¸ù¾ÝclassÀàÐÍ·µ»ØbeanÊµÀý
+	 * ï¿½ï¿½ï¿½ï¿½classï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½beanÊµï¿½ï¿½
 	 * @param <T>
 	 * @param requiredType
 	 * @return
@@ -84,7 +84,7 @@ public class SpringUtils {
 	}
 	
 	/**
-	 * BeanFactoryÊÇ·ñ°üº¬´ËnameµÄÊµÀý
+	 * BeanFactoryï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½nameï¿½ï¿½Êµï¿½ï¿½
 	 * @param name
 	 * @return
 	 */
@@ -93,7 +93,7 @@ public class SpringUtils {
 	}
 	
 	/**
-	 * ¸ù¾ÝbeanµÄnameÅÐ¶Ï¸ÃbeanÊÇ·ñµ¥Àý
+	 * ï¿½ï¿½ï¿½ï¿½beanï¿½ï¿½nameï¿½Ð¶Ï¸ï¿½beanï¿½Ç·ï¿½ï¿½ï¿½
 	 * @param name
 	 * @return
 	 * @throws NoSuchBeanDefinitionException
@@ -103,7 +103,7 @@ public class SpringUtils {
 	}
 	
 	/**
-	 * ¸ù¾ÝbeanµÄnameÅÐ¶Ï¸ÃbeanÊÇ·ñ¶àÀý
+	 * ï¿½ï¿½ï¿½ï¿½beanï¿½ï¿½nameï¿½Ð¶Ï¸ï¿½beanï¿½Ç·ï¿½ï¿½ï¿½ï¿½
 	 * @param name
 	 * @return
 	 * @throws NoSuchBeanDefinitionException
@@ -113,7 +113,7 @@ public class SpringUtils {
 	}
 	
 	/**
-	 * ¸ù¾ÝbeanµÄnameÅÐ¶Ï¸ÃbeanÊÇ·ñÊµÏÖÁËclassÀàÐÍ½Ó¿Ú
+	 * ï¿½ï¿½ï¿½ï¿½beanï¿½ï¿½nameï¿½Ð¶Ï¸ï¿½beanï¿½Ç·ï¿½Êµï¿½ï¿½ï¿½ï¿½classï¿½ï¿½ï¿½Í½Ó¿ï¿½
 	 * @param name
 	 * @param targetType
 	 * @return
@@ -124,7 +124,7 @@ public class SpringUtils {
 	}
 	
 	/**
-	 * ¸ù¾ÝbeanµÄname·µ»Ø¸ÃbeanµÄclassÀàÐÍ
+	 * ï¿½ï¿½ï¿½ï¿½beanï¿½ï¿½nameï¿½ï¿½ï¿½Ø¸ï¿½beanï¿½ï¿½classï¿½ï¿½ï¿½ï¿½
 	 * @param name
 	 * @return
 	 * @throws NoSuchBeanDefinitionException
@@ -134,7 +134,7 @@ public class SpringUtils {
 	}
 	
 	/**
-	 * ¸ù¾ÝbeanµÄname·µ»Ø¸ÃbeanµÄ±ðÃû
+	 * ï¿½ï¿½ï¿½ï¿½beanï¿½ï¿½nameï¿½ï¿½ï¿½Ø¸ï¿½beanï¿½Ä±ï¿½ï¿½ï¿½
 	 * @param name
 	 * @return
 	 */
@@ -143,7 +143,7 @@ public class SpringUtils {
 	}
 	
 	/**
-	 * ´ÓspringÖÐÈ¡bean£¬Ã»ÓÐ¾Í×¢²áÒ»¸ö
+	 * ï¿½ï¿½springï¿½ï¿½È¡beanï¿½ï¿½Ã»ï¿½Ð¾ï¿½×¢ï¿½ï¿½Ò»ï¿½ï¿½
 	 * @param <T>
 	 * @param name
 	 * @param requiredType

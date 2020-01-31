@@ -10,7 +10,7 @@ import org.springframework.transaction.TransactionDefinition;
 import com.greatcattle.dataservice.service.DBService;
 import com.greatcattle.dataservice.service.DbExecuteCallBack;
 import com.greatcattle.dataservice.service.impl.DbServiceImpl;
-import com.greatcattle.freamwork.utils.SpringUtils;
+import com.greatcattle.framework.utils.SpringUtils;
 
 /**
  * cglib 代理管理 

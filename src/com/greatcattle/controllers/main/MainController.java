@@ -5,14 +5,12 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 import com.greatcattle.controllers.utils.UiUtil;
-import com.greatcattle.freamwork.ContextApplication;
 
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
@@ -42,13 +40,14 @@ public class MainController  implements Initializable {
  
     @Override
     public void initialize(URL location, ResourceBundle resources) { 
-    	
-    	ContextApplication.initCtx();
+    	 
     	
         menuBar.prefWidthProperty().bind(pane.widthProperty());//��Ȱ�ΪPane��� ss
         workSpacePane.prefWidthProperty().bind( pane.widthProperty());  
         workSpacePane.prefHeightProperty().bind( pane.heightProperty());
         this.initWorkspace();
+        
+        
        
     }
     
