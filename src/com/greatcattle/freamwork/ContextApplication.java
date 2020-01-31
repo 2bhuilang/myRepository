@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.greatcattle.freamwork.utils.SpringUtils;
 
 /**
- * spring应用查询上下文
+ * spring涓婁笅鏂囧垵濮嬪寲
  * @author zhang.xian
  *
  */
@@ -14,9 +14,7 @@ public class ContextApplication {
 	
 	private static ApplicationContext appContext = null;
 	public static synchronized void  initCtx() {
-		if(true) {
-			return;
-		}
+		 
 		if(appContext!=null) {
 			return;
 		}
