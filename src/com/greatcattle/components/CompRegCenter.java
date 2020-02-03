@@ -1,6 +1,7 @@
 package com.greatcattle.components;
 
 import com.greatcattle.components.drivers.camera.CameraApi;
+import com.greatcattle.components.drivers.weighbridge.WeighBridgeApi;
 
 /**
  * 设备注册中心
@@ -21,6 +22,7 @@ public class CompRegCenter {
 	
 	
 	private CameraApi cameraApi = null;
+	private WeighBridgeApi weighBridgeApi = null;
 	
 	 
 	/**
@@ -29,6 +31,15 @@ public class CompRegCenter {
 	public void regCameraApi(CameraApi cameraApi ) {
 		this.cameraApi = cameraApi;
 	}
+	
+	/**
+	 * 注册摄像头设备
+	 */
+	public void regWeighBridgeApi(WeighBridgeApi weighBridgeApi ) {
+		this.weighBridgeApi = weighBridgeApi;
+	}
+	
+	
 
 
 	public CameraApi getCameraApi() {
