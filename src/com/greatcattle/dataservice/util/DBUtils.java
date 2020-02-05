@@ -1,7 +1,6 @@
 package com.greatcattle.dataservice.util;
 
 import com.greatcattle.dataservice.service.DBService;
-import com.greatcattle.dataservice.service.impl.DbServiceImpl;
 import com.greatcattle.framework.utils.SpringUtils;
 
 /**
@@ -17,7 +16,7 @@ public class DBUtils {
 	 */
 	public static DBService getDBService(){
 		 
-		return SpringUtils.getBean(DbServiceImpl.class); 
+		return SpringUtils.getBean(DBService.class); 
 		
 		
 	}

@@ -40,7 +40,7 @@
     </tx:advice>
     <aop:config>
         <aop:pointcut id="interceptorPointCuts" 
-                      expression="execution(* com.greatcattle..*.dataservice.service.impl..*.*.*(..)) 
+                      expression="execution(* com.greatcattle.dataservice.service..*.*.*(..)) 
                       || execution(* com.greatcattle.service..*.*.*(..))  "/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="interceptorPointCuts"/>
     </aop:config>
