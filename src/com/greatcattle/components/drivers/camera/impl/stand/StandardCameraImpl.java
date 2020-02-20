@@ -14,8 +14,13 @@ public class StandardCameraImpl implements CameraApi {
 	
 	private CameraStatus cameraStatus = new CameraStatus();
 	
-	private StandCameraProtocol standCameraProtocol = new StandCameraProtocol();
+	private StandCameraProtocol standCameraProtocol =  null ; 
+    private long userId;
 	
+        
+        public StandardCameraImpl(java.awt.Panel panelRealplay){
+            standCameraProtocol = new StandCameraProtocol(panelRealplay);
+        }
 	
 	@Override
 	public byte[] takePicture() {
@@ -40,8 +45,10 @@ public class StandardCameraImpl implements CameraApi {
 
 	@Override
 	public void connect() {
-		// TODO Auto-generated method stub
-		
+		long userId= standCameraProtocol.reg();
+                if(userId>-1){
+                     standCameraProtocol.playView(); 
+                } 
 	}
 
 
