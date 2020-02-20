@@ -19,7 +19,7 @@ public class StaffBO {
 	
 	public StaffInfoVO getStaffInfo(String staffCode) {
 		
-		String sql = "";
+		String sql = "";//a
 		
 		Map data = SqlMapExe.getInstance().queryForMapBySql(sql, new String[] {staffCode});
 		 
