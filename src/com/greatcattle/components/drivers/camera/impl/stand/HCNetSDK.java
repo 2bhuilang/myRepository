@@ -36,8 +36,7 @@ import com.sun.jna.win32.StdCallLibrary;
 
 //SDK接口说明,HCNetSDK.dll
 public interface HCNetSDK extends StdCallLibrary {
-
-	String sep = File.separator;
+ 
 	HCNetSDK INSTANCE = (HCNetSDK) Native.loadLibrary("E:\\e\\rb\\dev64lib\\HCNetSDK.dll", HCNetSDK.class);
 	// 如果SDK库加载不成功，也可以使用绝对路径测试看看，如下所示
 	// HCNetSDK INSTANCE = (HCNetSDK) Native.loadLibrary("D:\\lib\\HCNetSDK.dll",

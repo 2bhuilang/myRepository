@@ -17,8 +17,8 @@ import com.sun.jna.win32.StdCallLibrary;
  *
  * @author Administrator
  */
-public //播放库函数声明,PlayCtrl.dll
-interface PlayCtrl extends StdCallLibrary {
+//播放库函数声明,PlayCtrl.dll
+public  interface PlayCtrl extends StdCallLibrary {
 	PlayCtrl INSTANCE = (PlayCtrl) Native.loadLibrary("E:\\e\\rb\\dev64lib\\PlayCtrl.dll", PlayCtrl.class);
 
 	// 如果SDK库加载不成功，也可以使用绝对路径测试看看，如下所示

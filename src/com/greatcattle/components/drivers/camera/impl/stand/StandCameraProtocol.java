@@ -55,8 +55,8 @@ public class StandCameraProtocol {
     
     
     public long reg(){
-        m_sDeviceIP = "192.168.0.103";//设备ip地址 
-          hCNetSDK.NET_DVR_Logout_V30(new NativeLong(0));
+         m_sDeviceIP = "192.168.0.103";//设备ip地址 
+         hCNetSDK.NET_DVR_Logout_V30(new NativeLong(0));
          m_strDeviceInfo = new HCNetSDK.NET_DVR_DEVICEINFO_V30(); 
         lUserID = hCNetSDK.NET_DVR_Login_V30("192.168.0.103",
             (short) Integer.parseInt("8000"), "admin", new String("a12345678"), m_strDeviceInfo);

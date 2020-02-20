@@ -15,7 +15,7 @@ public class StandardCameraImpl implements CameraApi {
 	private CameraStatus cameraStatus = new CameraStatus();
 	
 	private StandCameraProtocol standCameraProtocol =  null ; 
-    private long userId;
+        private long userId;
 	
         
         public StandardCameraImpl(java.awt.Panel panelRealplay){
