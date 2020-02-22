@@ -5,8 +5,8 @@ package com.greatcattle.components.drivers.camera;
  * @author zhang.xian
  *
  */
-public interface CameraApi{
-	
+public interface CameraApi
+{	
 	
 	/**
 	 * 初始化

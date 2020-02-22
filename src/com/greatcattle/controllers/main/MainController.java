@@ -1,10 +1,15 @@
 package com.greatcattle.controllers.main;
 
 import java.net.URL;
+import java.util.Map;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
 import com.greatcattle.controllers.utils.UiUtil;
+import com.greatcattle.dataservice.util.DBUtils;
+import com.greatcattle.framework.ContextApplication;
+import com.greatcattle.framework.utils.SpringUtils;
+import com.greatcattle.service.staff.StaffService;
 
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -79,6 +84,16 @@ public class MainController  implements Initializable {
     
     @FXML 
     private void openWorkFlow(ActionEvent event){
+    	ContextApplication.initCtx();
+    	
+    	
+    	
+    	//SpringUtils.getBean(StaffService.class).login(null);
+    	String sql =  " insert into my_test(test1,test2,test3 ) "
+    			+ " values(?,?,?)";  
+    	System.out.println(111);
+    	int result = DBUtils.getDBService().excuteUpdate(sql, new String[] {"1222","abc","bac134"});
+    	System.out.println(result);
 		/*
 		 * Stage stage=new Stage(); InnerDynContanner con =
 		 * InnerViewFactory.createInnnerCon(stage); workCenterPane.getChildren().add(

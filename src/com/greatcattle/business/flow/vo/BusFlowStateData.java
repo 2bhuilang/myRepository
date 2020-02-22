@@ -7,9 +7,26 @@ package com.greatcattle.business.flow.vo;
  */
 public class BusFlowStateData {
 	//车牌信息
-	//拍照信息
+	
 	//车重信息
 	//车抽信息
+	
+	//拍照信息
+	private byte[] vehiclePic  = null;
+
+	public byte[] getVehiclePic() {
+		return vehiclePic;
+	}
+
+	public void setVehiclePic(byte[] vehiclePic) {
+		this.vehiclePic = vehiclePic;
+	}
+	
+	
+	
+
+	
+	
 	
 	
 	

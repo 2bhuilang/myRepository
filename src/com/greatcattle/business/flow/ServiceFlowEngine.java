@@ -15,7 +15,9 @@ import com.greatcattle.business.flow.vo.BusFlowStateData;
  */
 public class ServiceFlowEngine {
 	
-	private BusFlowStateData busFlowStateData = new BusFlowStateData();
+	private BusFlowStateData busFlowStateData =  BusFlowStateDataListener.createBusFlowSateProxy(new BusFlowStateData());
+			
+			 
 	
 	private List<IHandler> flowHanlders = new ArrayList();
 	
