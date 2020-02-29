@@ -2,8 +2,8 @@
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <Properties>
-    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[800, 500]"/>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+      <Connection code="UiUtil.getDefaultPanelSize()" type="code"/>
     </Property>
   </Properties>
   <AuxValues>
@@ -46,7 +46,7 @@
                   <EmptySpace pref="199" max="32767" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jTextField1" min="-2" pref="160" max="-2" attributes="0"/>
+                  <Component id="truckNoJTextField" min="-2" pref="160" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -61,7 +61,7 @@
                   <EmptySpace pref="17" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="truckNoJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -76,7 +76,10 @@
             <Property name="text" type="java.lang.String" value="&#x8f66;&#x724c;&#x53f7;&#xff1a;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="truckNoJTextField">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="truckNoJTextFieldActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
@@ -130,40 +133,16 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="jTable1">
+            <Component class="javax.swing.JTable" name="truckJTable">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="4" rowCount="4">
-                    <Column editable="true" title="&#x8f66;&#x724c;&#x53f7;" type="java.lang.Object"/>
-                    <Column editable="true" title="&#x76ae;&#x91cd;" type="java.lang.Object"/>
-                    <Column editable="true" title="&#x5907;&#x6ce8;" type="java.lang.Object"/>
-                    <Column editable="true" title="&#x552f;&#x4e00;&#x6807;&#x8bc6;&#x53f7;" type="java.lang.Object"/>
-                  </Table>
+                  <Table columnCount="0" rowCount="9"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                  <TableColumnModel selectionModel="0">
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                  </TableColumnModel>
+                  <TableColumnModel selectionModel="0"/>
                 </Property>
+                <Property name="name" type="java.lang.String" value="TRUCK" noResource="true"/>
                 <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
@@ -188,15 +167,15 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace pref="211" max="32767" attributes="0"/>
-                      <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                      <Component id="firstPage" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                      <Component id="lastPage" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jTextField2" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="pageIndexJTextField" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                      <Component id="nextPage" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton6" min="-2" max="-2" attributes="0"/>
+                      <Component id="endPage" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="247" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -205,11 +184,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="nextPage" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="endPage" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lastPage" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="firstPage" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="pageIndexJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                   </Group>
@@ -217,33 +196,43 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="jButton3">
+            <Component class="javax.swing.JButton" name="firstPage">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#x9996;&#x9875;"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="firstPageActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton4">
+            <Component class="javax.swing.JButton" name="lastPage">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#x4e0a;&#x4e00;&#x9875;"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lastPageActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton5">
+            <Component class="javax.swing.JButton" name="nextPage">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#x4e0b;&#x4e00;&#x9875;"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nextPageActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton6">
+            <Component class="javax.swing.JButton" name="endPage">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#x672b;&#x9875;"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="endPageActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField2">
+            <Component class="javax.swing.JTextField" name="pageIndexJTextField">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="1/10"/>
+                <Property name="text" type="java.lang.String" value="0/0"/>
               </Properties>
             </Component>
           </SubComponents>

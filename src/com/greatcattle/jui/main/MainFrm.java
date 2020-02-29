@@ -16,6 +16,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.text.DateFormatter;
 
 /**
@@ -62,7 +63,7 @@ public class MainFrm extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JDesktopPane();
         jPanel2 = new javax.swing.JPanel();
         leftStatus = new javax.swing.JLabel();
         midStatus = new javax.swing.JSeparator();
@@ -184,6 +185,9 @@ public class MainFrm extends javax.swing.JFrame {
         jToolBar1.add(jPanel4);
 
         jPanel1.add(jToolBar1, java.awt.BorderLayout.PAGE_START);
+
+        jPanel3.setBackground(new java.awt.Color(240, 240, 240));
+        jPanel3.setLayout(new java.awt.BorderLayout());
         jPanel1.add(jPanel3, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -360,11 +364,14 @@ public class MainFrm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+         jPanel3.removeAll();
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 TruckFrm truckFrm= new TruckFrm();
                 jPanel3.add(truckFrm);
                 truckFrm.setVisible(true);
+                jPanel3.updateUI();
+                jPanel3.repaint();
             }
         });
     }//GEN-LAST:event_jMenuItem2ActionPerformed
@@ -386,11 +393,14 @@ public class MainFrm extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem15ActionPerformed
 
     private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
+        jPanel3.removeAll();
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 SimulationFrm simulationFrm= new SimulationFrm();
                 jPanel3.add(simulationFrm);
                 simulationFrm.setVisible(true);
+                jPanel3.updateUI();
+                jPanel3.repaint();
             }
         });
     }//GEN-LAST:event_jMenuItem17ActionPerformed
@@ -506,7 +516,7 @@ public class MainFrm extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JDesktopPane jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;

@@ -13,7 +13,6 @@ import com.greatcattle.framework.utils.SpringUtils;
 import com.greatcattle.utils.StrTools;
 import java.util.HashMap;
 import java.util.Map;
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  *
@@ -167,16 +166,19 @@ public class LoginFrm extends javax.swing.JFrame {
     private void loginInBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginInBtnActionPerformed
         Map lgParam = new HashMap();
         LoginService loginService = SpringUtils.getBean(LoginService.class);
-        lgParam.put("userName", this.username.getText());
-        lgParam.put("passWd", this.password.getPassword());
+        lgParam.put("user_code", this.username.getText());
+        String passWord = new String(this.password.getPassword());
+        lgParam.put("pass_word", passWord);
         String retCode = loginService.loginIn(lgParam);
-        if(StrTools.isNotEmpty(retCode)){
+        if(!StrTools.isEqual(retCode, Msg.Succ.getCode())){
             this.errorLabel.setText(Msg.getMsg(retCode));
         }else{
             java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 setVisible(false);// 本窗口隐藏,
-                new MainFrm().setVisible(true);
+                MainFrm mainFrm = new MainFrm();
+                mainFrm.setVisible(true);
+                mainFrm.setLocationRelativeTo(null);
                 dispose();//本窗口销毁,释放内存资源
             }
         });
@@ -201,7 +203,7 @@ public class LoginFrm extends javax.swing.JFrame {
      */
     public static void main(String args[]){
         
-        	ContextApplication.initCtx();
+        ContextApplication.initCtx();
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -228,7 +230,9 @@ public class LoginFrm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LoginFrm().setVisible(true);
+                LoginFrm loginFrm = new LoginFrm();
+                loginFrm.setVisible(true);
+                loginFrm.setLocationRelativeTo(null);
             }
         });
     }
