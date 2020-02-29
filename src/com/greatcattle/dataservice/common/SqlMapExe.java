@@ -636,8 +636,14 @@ public class SqlMapExe implements java.io.Serializable{
 			stmt = conn.prepareStatement(DAOSQLUtils.getFilterSQL(sql, DAOSQLUtils.CRM_DB));
 			for (int i = 0; sqlParams != null && i < sqlParams.size(); i++) {
 				//Debug.print("sqlParams[" + i + "]=" + sqlParams.get(i));
-				DAOUtils.dealParam(i,(String) sqlParams.get(i));
-				stmt.setString(i + 1, (String) sqlParams.get(i));
+                               Object object = sqlParams.get(i);
+                               if(object instanceof String){
+                                   DAOUtils.dealParam(i,(String) sqlParams.get(i));
+                                    stmt.setString(i + 1, (String) sqlParams.get(i));
+                               }else{
+                                   DAOUtils.dealParam(i,String.valueOf(sqlParams.get(i)));
+                                    stmt.setInt(i + 1, (int) sqlParams.get(i));
+                               }
 			}
 			rs = stmt.executeQuery();
 
@@ -1075,7 +1081,7 @@ public class SqlMapExe implements java.io.Serializable{
 	public PageModel queryPageModelResult(String sql,ArrayList params,int pi,int
 	ps) { PageModel pageModel = new PageModel();
 	
-		String countSql = " select count(*) count from ( " + sql + " ) ";//计算总记录数
+		String countSql = " select count(*) count from ( " + sql + " ) as tt ";//计算总记录数
 		
 		int totalCount = new Long(this.querySingleValue(countSql,
 		params)).intValue();
@@ -1103,13 +1109,16 @@ public class SqlMapExe implements java.io.Serializable{
 		resultList = this.queryForMapListBySql(queryResultSql, params);
 		pageModel.setRows( resultList);
 		
-		} else { queryResultSql =
-		" select * from ( select mytable.*, rownum num from ( "; queryResultSql +=
-		sql; queryResultSql += " ) mytable )where num > ? and num <= ?";
+		} else { 
+//                    queryResultSql =
+//		" select * from ( select mytable.*, rownum num from ( "; queryResultSql +=
+//		sql; queryResultSql += " ) mytable )where num > ? and num <= ?";
+                    
+                queryResultSql = "select * from ("+sql+") as t  limit ?,?";
 		
 		ArrayList new_params = new ArrayList(); new_params.addAll(params);
-		new_params.add(String.valueOf(ps * (pi - 1)));
-		new_params.add(String.valueOf(ps * pi));
+		new_params.add(ps * (pi - 1));
+		new_params.add(ps);
 		
 		List resultList = this.queryForMapListBySql(queryResultSql, new_params,ps);
 		pageModel.setRows( resultList); }
@@ -1255,7 +1264,7 @@ public class SqlMapExe implements java.io.Serializable{
 		{
 			ColumnTypeName = rs.getMetaData().getColumnTypeName(i + 1);
 			ColumnName = rs.getMetaData().getColumnName(i + 1).toLowerCase();
-			if (ColumnTypeName.toLowerCase().equals("date") || ColumnTypeName.toLowerCase().equals("datetime year to second")){
+			if (ColumnTypeName.toLowerCase().equals("date") || ColumnTypeName.toLowerCase().equals("datetime")){
 				String _dateVal=DAOUtils.getFormatedDateTime( rs.getTimestamp(ColumnName));
 				if(_dateVal!=null && !_dateVal.equals("")){
 					if(_dateVal.indexOf(".")>=0){
