@@ -64,7 +64,7 @@ public class UiUtil {
     
     /**输入框字体*/
      public static java.awt.Font getTextFiledFont(){
-        return new java.awt.Font("宋体", 0, 14);
+        return new java.awt.Font("宋体", 0, 14);  
     }
      
      /***错误信息字体*/
