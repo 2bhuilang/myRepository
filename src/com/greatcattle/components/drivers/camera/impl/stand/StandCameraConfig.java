@@ -42,5 +42,13 @@ public class StandCameraConfig {
 
     public void setPassword(String password) {
         this.password = password;
-    } 
+    }
+	public String getPicPath() {
+		return picPath;
+	}
+	public void setPicPath(String picPath) {
+		this.picPath = picPath;
+	} 
+    
+    
 }
