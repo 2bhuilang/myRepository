@@ -31,8 +31,8 @@ public class MainFrameUi extends javax.swing.JFrame {
     
     
      private void initParams(){
-        lUserID = new NativeLong(-1);
-        lPreviewHandle = new NativeLong(-1);  
+        lUserID = -1;//new NativeLong(-1);
+        lPreviewHandle =-1;// new NativeLong(-1);  
         g_lVoiceHandle = new NativeLong(-1);
         m_lPort = new NativeLongByReference(new NativeLong(-1)); 
     }
@@ -45,8 +45,9 @@ public class MainFrameUi extends javax.swing.JFrame {
     HCNetSDK.NET_DVR_IPPARACFG_V40  m_strIpparaCfg;//IP参数
     HCNetSDK.NET_DVR_CLIENTINFO m_strClientInfo;//用户参数
   
-    NativeLong lUserID;//用户句柄
-    NativeLong lPreviewHandle;//预览句柄
+  //  NativeLong lUserID;//用户句柄
+    int lUserID;//用户句柄
+    int lPreviewHandle;//预览句柄
     NativeLongByReference m_lPort;//回调预览时播放库端口指针
       
 
@@ -621,13 +622,13 @@ public class MainFrameUi extends javax.swing.JFrame {
         lUserID = hCNetSDK.NET_DVR_Login_V30("192.168.0.103",
             (short) Integer.parseInt("8000"), "admin", new String("a12345678"), m_strDeviceInfo);
 
-        long userID = lUserID.longValue();
-        if (userID == -1)
+       // long userID = lUserID.longValue();
+        if (lUserID == -1)
         { 
             System.out.println("zhuceshibai");
         }
          
-        if (lUserID.intValue() == -1)
+        if (lUserID == -1)
         {
             JOptionPane.showMessageDialog(this, "请先注册");
             return;
@@ -638,14 +639,14 @@ public class MainFrameUi extends javax.swing.JFrame {
         int iChannelNum = 1;//通道号 
 
         m_strClientInfo = new HCNetSDK.NET_DVR_CLIENTINFO();
-        m_strClientInfo.lChannel = new NativeLong(iChannelNum);
+        m_strClientInfo.lChannel = iChannelNum ;//new NativeLong(iChannelNum);
 
         //在此判断是否回调预览,0,不回调 1 回调
 
         m_strClientInfo.hPlayWnd = hwnd;
         lPreviewHandle = hCNetSDK.NET_DVR_RealPlay_V30(lUserID,
                 m_strClientInfo, null, null, true); 
-        long previewSucValue = lPreviewHandle.longValue();
+        int previewSucValue = lPreviewHandle;
 
         //预览失败时:
         if (previewSucValue == -1)
