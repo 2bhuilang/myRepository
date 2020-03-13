@@ -15,12 +15,14 @@ public class StandardCameraImpl implements CameraApi {
 	private CameraStatus cameraStatus = new CameraStatus();
 	
 	private StandCameraProtocol standCameraProtocol =  null ; 
-        private long userId;
-	
+      
+    
+    public StandardCameraImpl(java.awt.Panel panelRealplay,StandCameraConfig standCameraConfig){
+    	this.standCameraConfig = standCameraConfig;
+        standCameraProtocol = new StandCameraProtocol(panelRealplay);
+        standCameraProtocol.setStandCameraConfig(standCameraConfig);
         
-        public StandardCameraImpl(java.awt.Panel panelRealplay){
-            standCameraProtocol = new StandCameraProtocol(panelRealplay);
-        }
+    }
 	
 	@Override
 	public byte[] takePicture() {
@@ -31,24 +33,22 @@ public class StandardCameraImpl implements CameraApi {
 
 	@Override
 	public void load() {
-		//读取配置
-		standCameraConfig = new StandCameraConfig();
-		//建立连接
-		
+		//读取配置 
+		//建立连接 
 	}
 
 	@Override
 	public void reset() {
-		// TODO Auto-generated method stub
+	
 		
 	}
 
 	@Override
 	public void connect() {
 		long userId= standCameraProtocol.reg();
-                if(userId>-1){
-                     standCameraProtocol.playView(); 
-                } 
+        if(userId>-1){
+             standCameraProtocol.playView(); 
+        } 
 	}
 
 

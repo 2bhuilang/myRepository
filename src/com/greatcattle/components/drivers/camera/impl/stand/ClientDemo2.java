@@ -171,8 +171,12 @@ public class ClientDemo2 extends javax.swing.JFrame
         m_strDeviceInfo = new HCNetSDK.NET_DVR_DEVICEINFO_V30();
         //        lUserID = hCNetSDK.NET_DVR_Login_V30(m_sDeviceIP,
             //                (short) iPort, jTextFieldUserName.getText(), new String(jPasswordFieldPassword.getPassword()), m_strDeviceInfo);
-        lUserID = hCNetSDK.NET_DVR_Login_V30("192.168.0.103",
-            (short) Integer.parseInt("8000"), "admin", new String("a12345678"), m_strDeviceInfo);
+        
+       // lUserID = hCNetSDK.NET_DVR_Login_V30(sDVRIP, wDVRPort, sUserName, sPassword, lpDeviceInfo)
+        int userId = hCNetSDK.NET_DVR_Login_V30("192.168.0.103", 
+            Short.parseShort("8000")
+            , "admin", new String("a12345678"), m_strDeviceInfo);
+        lUserID = new NativeLong(userId);
 
         long userID = lUserID.longValue();
         if (userID == -1)
@@ -193,13 +197,15 @@ public class ClientDemo2 extends javax.swing.JFrame
         int iChannelNum = 1;//通道号 
 
         m_strClientInfo = new HCNetSDK.NET_DVR_CLIENTINFO();
-        m_strClientInfo.lChannel = new NativeLong(iChannelNum);
+        m_strClientInfo.lChannel = iChannelNum ;//new NativeLong(iChannelNum);
 
         //在此判断是否回调预览,0,不回调 1 回调
 
         m_strClientInfo.hPlayWnd = hwnd;
-        lPreviewHandle = hCNetSDK.NET_DVR_RealPlay_V30(lUserID,
-                m_strClientInfo, null, null, true); 
+		/*
+		 * lPreviewHandle = hCNetSDK.NET_DVR_RealPlay_V30( (int)lUserID.intValue(),
+		 * m_strClientInfo, null, null, true);
+		 */
         long previewSucValue = lPreviewHandle.longValue();
 
         //预览失败时:

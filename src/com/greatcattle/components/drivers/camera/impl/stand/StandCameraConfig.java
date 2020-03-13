@@ -10,8 +10,10 @@ public class StandCameraConfig {
 	
 	private String ip ="";
 	private String port = "";
-        private String userName = "";
-        private String password = "";
+    private String userName = "";
+    private String password = "";
+    private String picPath = "";
+    
 	 
 	public String getIp() {
 		return ip;
@@ -26,19 +28,19 @@ public class StandCameraConfig {
 		this.port = port;
 	}
 
-        public String getUserName() {
-            return userName;
-        }
+    public String getUserName() {
+        return userName;
+    }
 
-        public void setUserName(String userName) {
-            this.userName = userName;
-        }
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
-        public String getPassword() {
-            return password;
-        }
+    public String getPassword() {
+        return password;
+    }
 
-        public void setPassword(String password) {
-            this.password = password;
-        } 
+    public void setPassword(String password) {
+        this.password = password;
+    } 
 }
