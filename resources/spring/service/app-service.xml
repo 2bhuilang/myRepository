@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+           http://www.springframework.org/schema/tx
+           http://www.springframework.org/schema/tx/spring-tx.xsd"
+       default-autowire="byName">
+       
+    
+   <bean id="plcComConfig" class="com.greatcattle.components.common.com.ComConfig">
+        <property name="portName" value="${plc.com}" />
+        <property name="bitRate" value="${plc.bitRate}" />
+        <property name="databits" value="${plc.databits}" />
+        <property name="stopbits" value="${plc.stopbits}" />
+        <property name="parity" value="${plc.parity}" /> 
+    </bean>
+    
+   <bean id="weighBridgeComConfig" class="com.greatcattle.components.common.com.ComConfig">
+        <property name="portName" value="${weighBridge.com}" />
+        <property name="bitRate" value="${weighBridge.bitRate}" />
+        <property name="databits" value="${weighBridge.databits}" />
+        <property name="stopbits" value="${weighBridge.stopbits}" />
+        <property name="parity" value="${weighBridge.parity}" /> 
+        <property name="extParam1" value="${weighBridge.extParam1}" /> 
+        <property name="extParam2" value="${weighBridge.extParam2}" /> 
+        <property name="extParam3" value="${weighBridge.extParam3}" /> 
+        <property name="extParam4" value="${weighBridge.extParam4}" /> 
+        <property name="extParam5" value="${weighBridge.extParam5}" /> 
+    </bean>
+    
+    <!-- 监控摄像头配置 -->
+    <bean id="surveillanceCameras" class="com.greatcattle.components.drivers.camera.impl.stand.StandCameraConfig">
+        <property name="ip" value="${surveillance.cameras.ip}" />
+        <property name="port" value="${surveillance.cameras.port}" />
+        <property name="userName" value="${surveillance.cameras.userName}" />
+        <property name="password" value="${surveillance.cameras.password}" />
+        <property name="picPath" value="${surveillance.cameras.picPath}" />  
+    </bean>
+     
+    <!-- 车牌摄像头配置 -->
+    <bean id="licensePlateCameras" class="com.greatcattle.components.drivers.camera.impl.stand.StandCameraConfig">
+        <property name="ip" value="${licensePlate.cameras.ip}" />
+        <property name="port" value="${licensePlate.cameras.port}" />
+        <property name="userName" value="${licensePlate.cameras.userName}" />
+        <property name="password" value="${licensePlate.cameras.password}" />
+        <property name="picPath" value="${licensePlate.cameras.picPath}" />  
+    </bean>
+     
+     
+</beans>
